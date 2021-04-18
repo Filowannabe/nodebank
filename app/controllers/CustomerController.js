@@ -13,6 +13,20 @@ CustomerController.create = async (req, res, next) => {
         next(error);
     }
 }
+
+CustomerController.find = async (req, res, next) => {
+    const params = req.params;
+    try {
+        const response = await CustomerService.findCustomer(params.id)
+        res.send(response)
+
+    } catch (error) {
+        console.log({ error })
+        res.status(500).send({ error: error.message }).end();
+        next(error);
+    }
+}
+
 CustomerController.delete = async (req, res, next) => {
     const params = req.params;
 

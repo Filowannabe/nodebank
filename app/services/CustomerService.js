@@ -36,7 +36,9 @@ CustomerService.delete = async (customerId) => {
 CustomerService.findCustomer = async (customerId) => {
     const customers = await CustomerRepository.findById(customerId)
 
-    if (customers.lenght == 0) return undefined;
+    if (customers.length === 0){
+        throw new Error('customer does not exist')
+    }
 
     return customers[0];
 }
