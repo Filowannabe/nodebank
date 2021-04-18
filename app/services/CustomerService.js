@@ -15,7 +15,7 @@ CustomerService.create = async (customer) => {
 CustomerService.edit = async (id, customer) => {
     const customerFound = await CustomerRepository.findById(id)
 
-    if (customerFound.length == 0) {
+    if (customerFound.length === 0) {
 
         throw new Error('Customer does not exist')
     }

@@ -71,7 +71,11 @@ AccountService.deposit = async (accountId, deposit) => {
     }
 
     if (!isNaN(deposit)) {
-        newAmount = accountToFind[0].amount + deposit;
+        if (!(deposit <= 0)) {
+            newAmount = accountToFind[0].amount + deposit;
+        } else {
+            throw new Error('Deposit is not valid')
+        }
     }
 
     await AccountRepository.edit(accountId, {

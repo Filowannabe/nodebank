@@ -11,7 +11,7 @@ router.get('/customers/:id', CustomerController.find);
 router.get('/customers/:id/accounts', AccountController.listAccountsByCustomer);
 router.post('/accounts', AccountController.createAccount);
 router.delete('/accounts/:id', AccountController.cancelAccount);
-router.put('/accounts/:id/withrawal', AccountController.withDraw);
+router.put('/accounts/:id/withrawal', AccountController.withRawal);
 router.put('/accounts/:id/deposit', AccountController.deposit);
 router.put('/accounts/:id/transfer', AccountController.transfer);
 

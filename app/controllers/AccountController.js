@@ -45,7 +45,7 @@ AccountController.cancelAccount = async (req, res, next) => {
     }
 }
 
-AccountController.withDraw = async (req, res, next) => {
+AccountController.withRawal = async (req, res, next) => {
     const params = req.params;
     const body = req.body;
 
