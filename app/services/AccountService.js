@@ -96,6 +96,10 @@ AccountService.transfer = async (originAccountId, destinationAccountId, amount) 
     if (destinationAccountToFind.length === 0) {
         throw new Error('Destination Account does not exist')
     }
+    
+    if (amount <= 0) {
+        throw new Error('Deposit is not valid')
+    }
 
     if (!isNaN(amount)) {
         if ((originAccountToFind[0].amount - amount) < 0) {
