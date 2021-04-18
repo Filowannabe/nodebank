@@ -49,6 +49,9 @@ AccountService.withRawal = async (accountId, withrawal) => {
     if (accountToFind.length === 0) {
         throw new Error('Account does not exist')
     }
+    if (withrawal <= 0) {
+        throw new Error('Withrawal is not valid')
+    }
 
     if (!isNaN(withrawal)) {
         if ((accountToFind[0].amount - withrawal) < 0) {
@@ -98,7 +101,7 @@ AccountService.transfer = async (originAccountId, destinationAccountId, amount) 
     }
     
     if (amount <= 0) {
-        throw new Error('Deposit is not valid')
+        throw new Error('Transfer is not valid')
     }
 
     if (!isNaN(amount)) {
