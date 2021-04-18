@@ -50,7 +50,7 @@ AccountController.withRawal = async (req, res, next) => {
     const body = req.body;
 
     try {
-        await AccountService.withDraw(params.id, body.withrawal)
+        await AccountService.withRawal(params.id, body.withrawal)
         res.send({ message: 'Withrawal was succesful' })
 
     } catch (error) {

@@ -43,7 +43,7 @@ AccountService.cancel = async (accountId) => {
     await AccountRepository.delete(accountId)
 }
 
-AccountService.withDraw = async (accountId, withrawal) => {
+AccountService.withRawal = async (accountId, withrawal) => {
     const accountToFind = await AccountRepository.findById(accountId)
     let newAmount = 0;
     if (accountToFind.length === 0) {
